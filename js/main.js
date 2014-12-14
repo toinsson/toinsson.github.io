@@ -38,14 +38,24 @@ var graph = {};
 graph["nodes"] = [];
 graph["links"] = [];
 
+var cache = new LastFMCache();
+var lastfm = new LastFM({
+    apiKey    : 'f8681037a8e1f6fc900b5d5f48cb160c',
+    apiSecret : '1c8667d1473872145606a4b065f096a0',
+    cache     : cache
+});
+
+// init the graph
+$(function() {
+    width = 960,
+    height = 500;
+    svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+});
+
 // get new artist
 function getNewArtist(artistName) {
-    var cache = new LastFMCache();
-    var lastfm = new LastFM({
-        apiKey    : 'f8681037a8e1f6fc900b5d5f48cb160c',
-        apiSecret : '1c8667d1473872145606a4b065f096a0',
-        cache     : cache
-    });
 
     var parent = {};
     /* artist info */
@@ -98,18 +108,119 @@ function getNewArtist(artistName) {
     });
 }
 
-// init the graph
-$(function() {
-    width = 960,
-    height = 500;
-    svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height);
-});
+
 
 function drawTree(nodes, links) {
 
-var force = d3.layout.force()
+    var force = d3.layout.force()
+        .gravity(.05)
+        .distance(100)
+        .charge(-100)
+        .size([width, height]);
+
+    force
+        .nodes(nodes)
+        .links(links)
+        .start();
+
+    var link = svg.selectAll(".link")
+        .data(links)
+        .enter().append("line")
+        .attr("class", "link");
+
+    var node = svg.selectAll(".node")
+        .data(nodes)
+        .enter().append("g")
+        .attr("class", "node")
+        .call(force.drag);
+
+    node.append("circle")
+        .attr("r", 10)
+        .style("fill", "purple");
+
+    node.on("click", function(d){
+        var node = d3.select(this);
+        console.log(d.name);
+        appendNewSimilar(d);
+    })
+
+    node.append("text")
+        .attr("dx", 12)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.name });
+
+    force.on("tick", function() {
+        link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+        node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    });
+}
+
+function appendNewSimilar(parent) {
+    console.log(parent);
+
+    console.log(graph);
+
+    console.log(graph.nodes.indexOf(parent));
+    /* artist's similar */
+    lastfm.artist.getSimilar({artist: parent.name}, 
+        {success: function(data){
+            /* Use data. */
+            // console.log("getSimilar");
+            // console.log(data);
+
+            // create the graph structure
+            var i;
+            for (i = 0; i < 10; i++) {
+                var tmp = data["similarartists"]["artist"][i]
+
+                // check if valid structure
+                if (tmp["mbid"] !== "") {
+                    var child = {"id":tmp["mbid"], "name":tmp["name"]};
+                    var existingChild = containsObject(child, graph.nodes);
+                    if (existingChild) {
+                        child = existingChild;
+                    } else {
+                        graph["nodes"].push(child);
+                    }
+                    var link = {"source":parent, "target":child}
+                    graph["links"].push(link);
+                }
+            }
+
+            // console.log(graph);
+            // print the graph of similar
+            drawTree(graph["nodes"], graph["links"]);
+        }, 
+        error: function(code, message){
+            /* Show error message. */
+            console.log("5");
+        }
+    });
+}
+
+
+function containsObject(obj, list) {
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i].mbid === obj.mbid) {
+            return list[i];
+        }
+    }
+    return false;
+}
+    // node.append("image")
+    //     .attr("xlink:href", "https://github.com/favicon.ico")
+    //     .attr("x", -8)
+    //     .attr("y", -8)
+    //     .attr("width", 16)
+    //     .attr("height", 16);
+
+function drawTree3(nodes, links) {
+    var force = d3.layout.force()
     .gravity(.05)
     .distance(100)
     .charge(-100)
@@ -119,48 +230,48 @@ var force = d3.layout.force()
 
     // Start the force layout.
     force
-        .nodes(nodes)
-        .links(links)
-        .start();
+    .nodes(nodes)
+    .links(links)
+    .start();
 
     // Create the link lines.
     var link = svg.selectAll(".link")
-        .data(links)
-        .enter().append("line")
-        .attr("class", "link");
+    .data(links)
+    .enter().append("line")
+    .attr("class", "link");
 
     // Create the node circles.
     var node = svg.selectAll(".node")
-        .data(nodes)
-        .enter().append("g")
-        .attr("class", "node")
-        .call(force.drag);
+    .data(nodes)
+    .enter().append("g")
+    .attr("class", "node")
+    .call(force.drag);
 
-  node.append("image")
-      .attr("xlink:href", "https://github.com/favicon.ico")
-      .attr("x", -8)
-      .attr("y", -8)
-      .attr("width", 16)
-      .attr("height", 16);
+    node.append("image")
+    .attr("xlink:href", "https://github.com/favicon.ico")
+    .attr("x", -8)
+    .attr("y", -8)
+    .attr("width", 16)
+    .attr("height", 16);
 
-  node.append("text")
-      .attr("dx", 12)
-      .attr("dy", ".35em")
-      .text(function(d) { return d.name });
-        // .attr("r", 4.5)
-        // .attr("name", function(d) { return d["name"]; })
-        // .on('mouseover', function(d){
-        //     var nodeSelection = d3.select(this).style({opacity:'0.8'});
-        //     nodeSelection.select("name").style({opacity:'1.0'});
-        // });
-  // force.on("tick", function() {
-  //   link.attr("x1", function(d) { return d.source.x; })
-  //       .attr("y1", function(d) { return d.source.y; })
-  //       .attr("x2", function(d) { return d.target.x; })
-  //       .attr("y2", function(d) { return d.target.y; });
+    node.append("text")
+    .attr("dx", 12)
+    .attr("dy", ".35em")
+    .text(function(d) { return d.name });
+    // .attr("r", 4.5)
+    // .attr("name", function(d) { return d["name"]; })
+    // .on('mouseover', function(d){
+    //     var nodeSelection = d3.select(this).style({opacity:'0.8'});
+    //     nodeSelection.select("name").style({opacity:'1.0'});
+    // });
+    // force.on("tick", function() {
+    //   link.attr("x1", function(d) { return d.source.x; })
+    //       .attr("y1", function(d) { return d.source.y; })
+    //       .attr("x2", function(d) { return d.target.x; })
+    //       .attr("y2", function(d) { return d.target.y; });
 
-  //   node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-  // });
+    //   node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    // });
     // node.append("text")
     //     .attr("dx", 12)
     //     .attr("dy", ".35em")
@@ -170,17 +281,17 @@ var force = d3.layout.force()
     force
     //     .nodes(nodes)
     //     .links(links)
-        .on("tick", tick);
+    .on("tick", tick);
     //     .start();
 
     function tick() {
-        link.attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+    link.attr("x1", function(d) { return d.source.x; })
+    .attr("y1", function(d) { return d.source.y; })
+    .attr("x2", function(d) { return d.target.x; })
+    .attr("y2", function(d) { return d.target.y; });
 
-        node.attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
+    node.attr("cx", function(d) { return d.x; })
+    .attr("cy", function(d) { return d.y; });
     }
 }
 
