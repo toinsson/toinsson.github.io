@@ -51,7 +51,7 @@ var N_SIMILAR = 5;
 
 // init the graph
 width = 960,
-height = 500;
+height = 800;
 $(function() {
     svg = d3.select("body").append("svg")
         .attr("width", width)
@@ -150,18 +150,21 @@ function drawTree() {
         .data(graph["nodes"]);
 
     // create new nodes and append circle and text as children
-    node.enter().append("g")
-        .attr("class", "node")
-        .call(force.drag);
-    node.append("circle")
+    var nodeEnterG = node.enter().append("g").attr("class", "node").call(force.drag);
+
+    nodeEnterG.append("circle")
         .attr("r", 10)
         .style("fill", "purple");
-    node.append("text")
+
+    nodeEnterG.append("text")
         .attr("dx", 12)
         .attr("dy", ".35em")
         .text(function(d) { return d.name });
 
     node.on("click", function(d){
+        // Ignore the click event if it was suppressed
+        if (d3.event.defaultPrevented) return;
+
         var node = d3.select(this);
         console.log(d.name);
         appendNewSimilar(d);
