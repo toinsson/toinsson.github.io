@@ -82,6 +82,56 @@ function clearGraph() {
     console.log(graph);
 }
 
+function drawTree() {
+
+    var link = svg.selectAll(".link")
+        .data(graph["links"]);
+
+    link.enter().append("line")
+        .attr("class", "link");
+
+    var node = svg.selectAll(".node")
+        .data(graph["nodes"]);
+
+    // ENTER - create new nodes and append circle and text as children
+    var nodeEnterG = node.enter().append("g").attr("class", "node").call(force.drag);
+
+    nodeEnterG.append("circle")
+        .attr("r", 10)
+        .style("fill", function(d) { return d["color"]});
+
+    nodeEnterG.append("text")
+        .attr("dx", 12)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.name });
+
+
+    // UPDATE
+    svg.selectAll("circle")
+        .style("fill", function(d) { return d["color"]})
+        .attr("r", function(d) { return d["radius"]});
+
+    // need to set this all the time - not sure why?
+    node.on("click", function(d){
+        // Ignore the click event if it was suppressed
+        if (d3.event.defaultPrevented) return;
+
+        var node = d3.select(this);
+        console.log(d.name);
+        appendNewSimilar(d);
+    });
+
+    force.on("tick", function() {
+        link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+        node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    });
+    force.start();
+}
+
 // get new artist
 function getNewArtist(artistName) {
 
@@ -93,7 +143,8 @@ function getNewArtist(artistName) {
             console.log(data);
             parent["id"] = data["artist"]["mbid"];
             parent["name"] = data["artist"]["name"];
-
+            parent["color"] = "orange";
+            parent["radius"] = 10;
             graph["nodes"].push(parent); // if not exist
         }, 
         error: function(code, message){
@@ -118,7 +169,7 @@ function getNewArtist(artistName) {
                 var tmp = data["similarartists"]["artist"][i]
                 // add a check on mbid
                 if (tmp["mbid"] !== "") {
-                    var child = {"id":tmp["mbid"], "name":tmp["name"]};
+                    var child = {"id":tmp["mbid"], "name":tmp["name"], "color":"gray", "radius":10};
                     graph["nodes"].push(child);
                     var link = {"source":parent, "target":child}
                     graph["links"].push(link);  
@@ -136,57 +187,14 @@ function getNewArtist(artistName) {
     });
 }
 
-
-
-function drawTree() {
-
-    var link = svg.selectAll(".link")
-        .data(graph["links"]);
-
-    link.enter().append("line")
-        .attr("class", "link");
-
-    var node = svg.selectAll(".node")
-        .data(graph["nodes"]);
-
-    // create new nodes and append circle and text as children
-    var nodeEnterG = node.enter().append("g").attr("class", "node").call(force.drag);
-
-    nodeEnterG.append("circle")
-        .attr("r", 10)
-        .style("fill", "purple");
-
-    nodeEnterG.append("text")
-        .attr("dx", 12)
-        .attr("dy", ".35em")
-        .text(function(d) { return d.name });
-
-    node.on("click", function(d){
-        // Ignore the click event if it was suppressed
-        if (d3.event.defaultPrevented) return;
-
-        var node = d3.select(this);
-        console.log(d.name);
-        appendNewSimilar(d);
-    })
-
-    force.on("tick", function() {
-        link.attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-
-        node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-    });
-    force.start();
-}
-
 function appendNewSimilar(parent) {
     console.log(parent);
-
     console.log(graph);
-
     console.log(graph.nodes.indexOf(parent));
+
+    var idx = graph["nodes"].indexOf(parent);
+    graph["nodes"][idx]["color"] = "orange";
+
     /* artist's similar */
     lastfm.artist.getSimilar({artist: parent.name}, 
         {success: function(data){
@@ -201,11 +209,12 @@ function appendNewSimilar(parent) {
 
                 // check if valid structure
                 if (tmp["mbid"] !== "") {
-                    var child = {"id":tmp["mbid"], "name":tmp["name"]};
-                    var existingChild = containsNode(child, graph.nodes);
+                    var child = {"id":tmp["mbid"], "name":tmp["name"], "color":"gray", "radius":10};
+                    var existingChildIdx = containsNode(child, graph.nodes);
 
-                    if (existingChild) {
-                        child = existingChild;
+                    if (existingChildIdx) {
+                        graph.nodes[existingChildIdx]["radius"] += 2;
+                        child = graph.nodes[existingChildIdx];
                         var existingEdge = containsEdge(parent, child, graph.links);
                         if (existingEdge) {}
                         else {
@@ -236,7 +245,7 @@ function containsNode(obj, list) {
     var i;
     for (i = 0; i < list.length; i++) {
         if (list[i].id === obj.id) {
-            return list[i];
+            return i;
         }
     }
     return false;
