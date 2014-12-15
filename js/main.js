@@ -1,9 +1,7 @@
 // remove text
 $(function() {
     $("#searchInput").click(function() {
-        // if ($("#searchInput").val() == "Mouse"){
-            $("#searchInput").val(""); 
-        // }
+        $("#searchInput").val(""); 
     });
 });
 
@@ -34,7 +32,7 @@ $(function() {
     });
 });
 
-// global variables - temporary !
+// global variables
 var graph = {};
 graph["nodes"] = [];
 graph["links"] = [];
@@ -52,11 +50,13 @@ var N_SIMILAR = 5;
 // init the graph
 width = 960,
 height = 800;
+
 $(function() {
     svg = d3.select("body").append("svg")
         .attr("width", width)
         .attr("height", height);
 });
+
 var force = d3.layout.force()
     .gravity(.05)
     .distance(100)
@@ -66,8 +66,9 @@ var force = d3.layout.force()
 force
     .nodes(graph["nodes"])
     .links(graph["links"]);
-    // .start();    
 
+////////////////////////////////////////////////////////////////////////////// 
+// GRAPH FUNCTIONS
 // clear the graph
 function clearGraph() {
     var node = svg.selectAll(".node"),
@@ -132,6 +133,8 @@ function drawTree() {
     force.start();
 }
 
+////////////////////////////////////////////////////////////////////////////// 
+// NEW DATA FUNCTIONS
 // get new artist
 function getNewArtist(artistName) {
 
@@ -260,39 +263,4 @@ function containsEdge(src, trg, list) {
     }
     return false;
 }
-
-// Toggle children on click.
-// function click(d) {
-//   if (d3.event.defaultPrevented) return; // ignore drag
-//   if (d.children) {
-//     d._children = d.children;
-//     d.children = null;
-//   } else {
-//     d.children = d._children;
-//     d._children = null;
-//   }
-//   update();
-// }
-
-// API Key: f8681037a8e1f6fc900b5d5f48cb160c
-// Secret: is 1c8667d1473872145606a4b065f096a0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
