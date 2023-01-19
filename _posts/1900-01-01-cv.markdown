@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Curriculum Vitae"
+# date:   2023-01-18 18:36:34 +0100
+# categories: jekyll update
+---
+
+
+## Research (7 years)
+
+*1. IRCAM/CNRS/INRIA - Post Doctoral Researcher*
+* Studied the perception of motor learning in tasks involving complex and creative movements by implementing a **metric learning** approach on top of Dynamical Time Warping (*Pytorch*).\
+Published in [PLOS One](https://hal.archives-ouvertes.fr/hal-03790829/).
+* Improved upon and released an **open‑source project** on Github and Pypi providing the soft‑DTW algorithm for CUDA devices (*Pytorch, CUDA*).\
+Available at [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pysdtw).
+* Optimised a training schedule for a motor task using **reinforcement learning** and MABs based on a framework specialised in interactive machine learning (Marcelle, Javascript, Python).\
+Submitted to IHM’22.
+* Developed a prototype for movement exploration and modelling based on an algorithm performing live incremental clustering of time series (Javascript, MaxMSP, Python, C++).\
+Demoed at [NIME’22](https://nime.pubpub.org/pub/8zdsd4ar/).
+
+*2. University of Glasgow - PhD Candidate*
+* Researched [computational methods for the study of novel gestural interactions](https://theses.gla.ac.uk/78981/):
+  - **Deployed discriminative models** (Keras) to create virtual surfaces from RGB‑D sensors.\
+        Published at [ISS’17](https://dl.acm.org/doi/abs/10.1145/3132272.3135074).
+  - **Optimised gameplay experiences** for custom game controllers using user probabilistic modelling.\
+        Available on [arXiv](https://arxiv.org/abs/2209.14788).
+  - Explored and characterised user physical capabilities with audio‑based reinforcement learning.
+  - **Recorded a synthetic dataset** for detecting repetitive movement from accelerometer data and **wrote from scratch a deep model** based on 1D convolutions (Python, Keras).
+* Contributed to the European project MoreGrasp:
+  - **Led redaction** of deliverable documents involving coordination with several project members.
+  - Implementated visual feedback mechanisms on smartwatches (Android).
+  - **Prepared live demos** and posters for review meetings.
+  - **Established contacts** with health practitioners at Glasgow’s hospital leading to workshops and a funding proposal.
+* Analysed visualisation techniques ([Jupyter notebooks](https://github.com/toinsson/raviz)) for low‑dimensional embeddings, i.e. t‑SNE.
+* **Tutored the courses Artificial Intelligence and Data Fundamentals** for Undergraduate and Master students.
+* Developed and released open source software for Intel Realsense camera. This package was recommended by Intel as a primary choice for community maintained Python bindings (until librealsense 2.0 was released) and has accrued over one hundred stars on github.\
+Available at [pyrealsense](https://github.com/toinsson/pyrealsense), [![Downloads](https://static.pepy.tech/personalized-badge/pyrealsense?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pyrealsense).
+
+## Industry (7 years)
+
+*1. Now&Net*
+* Co-founded a startup providing a collective musical experience organised around DJ-ing.
+* Developped a proof-of-concept recommender system (Neo4j) for creating attractive playlists.
+* Wrote R&D plans leading to the successful application to the status of JEI.
+
+*2. Ericsson AB*
+* **SCRUM master** [2013/2014]: Acted as the ''guardian of the process'' to facilitate daily operations of a cross functional team (8 people). Animated planning meetings, daily follow-up meetings and retrospective meetings.
+* **System engineer** AT&T laboratory [summer 2012]: Integrated features into the customer network with laboratory and in-the-field experiments.
+* **Research engineer** at Ericsson Research [2012]: Prepared the 4G+ prototype for the Mobile World Congress.
+* **Software Developer** 4G/LTE [2008/2014]: Developped algorithms (embedded C) from standard 3GPP specifications. Extended and supported an Erlang test framework used by 50 engineers. Provided training sessions in Stockholm and Beijing.
+
+## Education
+
+University of Glasgow - PhD in Computing Science - 2015/2019
+
+KTH - MSc in Applied Physics - 2006/2009
+
+Telecom Strasbourg - MSc in Engineering - 2003/2006
