@@ -12,7 +12,7 @@ title:  "Curriculum Vitae"
 * Studied the perception of motor learning in tasks involving complex and creative movements by implementing a **metric learning** approach on top of Dynamical Time Warping (*Pytorch*).\
 Published in [PLOS One](https://hal.archives-ouvertes.fr/hal-03790829/).
 * Improved upon and released an **open‑source project** on Github and Pypi providing the soft‑DTW algorithm for CUDA devices (*Pytorch, CUDA*).\
-Available at [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pysdtw).
+Available as [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pysdtw).
 * Optimised a training schedule for a motor task using **reinforcement learning** and MABs based on a framework specialised in interactive machine learning (Marcelle, Javascript, Python).\
 Submitted to IHM’22.
 * Developed a prototype for movement exploration and modelling based on an algorithm performing live incremental clustering of time series (Javascript, MaxMSP, Python, C++).\
@@ -34,7 +34,7 @@ Demoed at [NIME’22](https://nime.pubpub.org/pub/8zdsd4ar/).
 * Analysed visualisation techniques ([Jupyter notebooks](https://github.com/toinsson/raviz)) for low‑dimensional embeddings, i.e. t‑SNE.
 * **Tutored the courses Artificial Intelligence and Data Fundamentals** for Undergraduate and Master students.
 * Developed and released open source software for Intel Realsense camera. This package was recommended by Intel as a primary choice for community maintained Python bindings (until librealsense 2.0 was released) and has accrued over one hundred stars on github.\
-Available at [pyrealsense](https://github.com/toinsson/pyrealsense), [![Downloads](https://static.pepy.tech/personalized-badge/pyrealsense?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pyrealsense).
+Available as [pyrealsense](https://github.com/toinsson/pyrealsense), [![Downloads](https://static.pepy.tech/personalized-badge/pyrealsense?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pyrealsense).
 
 ## Industry (7 years)
 

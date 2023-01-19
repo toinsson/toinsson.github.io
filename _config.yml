@@ -23,7 +23,7 @@ author:
   name: Antoine Loriette
   email: antoine.loriette@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-   A small professional website for presenting my profile.
+   A small professional website.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://toinsson.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
