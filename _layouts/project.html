@@ -19,32 +19,10 @@ layout: default
     {{ content }}
   </div>
 
-
-<!-- JQuery -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"> -->
-<!-- D3 -->
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-
-
-  <!-- LastFM -->
-  <script type="text/javascript" src="/assets/js/lastfm.api.cache.js"></script>
-  <script type="text/javascript" src="/assets/js/lastfm.api.js"></script>
-  <script type="text/javascript" src="/assets/js/lastfm.api.md5.js"></script>
-
-  <!-- local files -->
-  <!-- <link href="/_assets/main.css" rel="stylesheet"> -->
-  <script src="/assets/js/main.js"></script>
-
-  <div>
-  <form>
-      <input id="searchInput" type="text" value="Type an artist name..">
-      <button id="searchButton" type="submit" value="A submit button">
-  </form>
-  </div>
-
-  <div id="d3-graph"></div>
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+<ul>
+  {% for project in site.projects %}
+    <li>
+      <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+    </li>
+  {% endfor %}
+</ul>

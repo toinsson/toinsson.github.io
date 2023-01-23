@@ -1,14 +1,29 @@
+// // global variables
+var graph = {};
+graph["nodes"] = [];
+graph["links"] = [];
+
+// init the graph
+width = 960;
+height = 800;
+
+$(function() {
+    svg = d3.select("#d3-graph").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+});
+
 // remove text
 $(function() {
     $("#searchInput").click(function() {
-        $("#searchInput").val(""); 
+        $("#searchInput").val("");
     });
 });
 
 // perform the search
 $(function() {
     $("#searchButton").click(function() {
-        console.log("yolo");
+        console.log("SEARCHING");
         var searchInputVal = $("#searchInput").val()
         console.log(searchInputVal);
         clearGraph();
@@ -16,26 +31,24 @@ $(function() {
     });
 });
 
-// decorate with icon
-$(function() {
-    $("#searchButton").button(
-        {icons: {primary: "ui-icon-search"},text: false}
-    );
-});
+// // decorate with icon
+// $(function() {
+//     $("#searchButton").button(
+//         {icons: {primary: "ui-icon-search"},text: false}
+//     );
+// });
 
 // enable submit button
 $(function() {
-    $("input[type=submit], a, button")
+    $("input[type=submit], button")
         .button()
         .click(function( event ) {
-        event.preventDefault();
+        console.log("MOUSE")
+        // event.preventDefault();
+        return false
     });
 });
 
-// global variables
-var graph = {};
-graph["nodes"] = [];
-graph["links"] = [];
 
 var cache = new LastFMCache();
 var lastfm = new LastFM({
@@ -47,15 +60,12 @@ var lastfm = new LastFM({
 // CONSTANT
 var N_SIMILAR = 5;
 
-// init the graph
-width = 960,
-height = 800;
 
-$(function() {
-    svg = d3.select("#d3-graph").append("svg")
-        .attr("width", width)
-        .attr("height", height);
-});
+// $(function() {
+//     svg = d3.select("#d3-graph").append("svg")
+//         .attr("width", width)
+//         .attr("height", height);
+// });
 
 var force = d3.layout.force()
     .gravity(.05)
@@ -67,7 +77,7 @@ force
     .nodes(graph["nodes"])
     .links(graph["links"]);
 
-////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////
 // GRAPH FUNCTIONS
 // clear the graph
 function clearGraph() {
@@ -113,14 +123,14 @@ function drawTree() {
         .attr("r", function(d) { return d["radius"]});
 
     // need to set this all the time - not sure why?
-    node.on("click", function(d){
-        // Ignore the click event if it was suppressed
-        if (d3.event.defaultPrevented) return;
+    // node.on("click", function(d){
+    //     // Ignore the click event if it was suppressed
+    //     // if (d3.event.defaultPrevented) return;
 
-        var node = d3.select(this);
-        console.log(d.name);
-        appendNewSimilar(d);
-    });
+    //     var node = d3.select(this);
+    //     console.log(d.name);
+    //     appendNewSimilar(d);
+    // });
 
     force.on("tick", function() {
         link.attr("x1", function(d) { return d.source.x; })
@@ -133,14 +143,14 @@ function drawTree() {
     force.start();
 }
 
-////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////
 // NEW DATA FUNCTIONS
 // get new artist
 function getNewArtist(artistName) {
 
     var parent = {};
     /* artist info */
-    lastfm.artist.getInfo({artist: artistName}, 
+    lastfm.artist.getInfo({artist: artistName},
         {success: function(data){
             console.log("getInfo");
             console.log(data);
@@ -149,7 +159,7 @@ function getNewArtist(artistName) {
             parent["color"] = "orange";
             parent["radius"] = 10;
             graph["nodes"].push(parent); // if not exist
-        }, 
+        },
         error: function(code, message){
             /* Show error message. */
             console.log("5");
@@ -157,7 +167,7 @@ function getNewArtist(artistName) {
     });
 
     /* artist's similar */
-    lastfm.artist.getSimilar({artist: artistName}, 
+    lastfm.artist.getSimilar({artist: artistName},
         {success: function(data){
             /* Use data. */
             console.log("getSimilar");
@@ -175,61 +185,7 @@ function getNewArtist(artistName) {
                     var child = {"id":tmp["mbid"], "name":tmp["name"], "color":"gray", "radius":10};
                     graph["nodes"].push(child);
                     var link = {"source":parent, "target":child}
-                    graph["links"].push(link);  
-                }
-            }
-
-            console.log(graph);
-            // print the graph of similar
-            drawTree();
-        }, 
-        error: function(code, message){
-            /* Show error message. */
-            console.log("5");
-        }
-    });
-}
-
-function appendNewSimilar(parent) {
-    console.log(parent);
-    console.log(graph);
-    console.log(graph.nodes.indexOf(parent));
-
-    var idx = graph["nodes"].indexOf(parent);
-    graph["nodes"][idx]["color"] = "orange";
-
-    /* artist's similar */
-    lastfm.artist.getSimilar({artist: parent.name}, 
-        {success: function(data){
-            /* Use data. */
-            // console.log("getSimilar");
-            console.log(data);
-
-            // create the graph structure
-            var i;
-            for (i = 0; i < N_SIMILAR; i++) {
-                var tmp = data["similarartists"]["artist"][i]
-
-                // check if valid structure
-                if (tmp["mbid"] !== "") {
-                    var child = {"id":tmp["mbid"], "name":tmp["name"], "color":"gray", "radius":10};
-                    var existingChildIdx = containsNode(child, graph.nodes);
-
-                    if (existingChildIdx) {
-                        graph.nodes[existingChildIdx]["radius"] += 2;
-                        child = graph.nodes[existingChildIdx];
-                        var existingEdge = containsEdge(parent, child, graph.links);
-                        if (existingEdge) {}
-                        else {
-                            var link = {"source":parent, "target":child};
-                            graph["links"].push(link);
-                        }
-                    }
-                    else { // add both node and edge
-                        graph["nodes"].push(child);
-                        var link = {"source":parent, "target":child};
-                        graph["links"].push(link);
-                    }
+                    graph["links"].push(link);
                 }
             }
 
@@ -244,23 +200,77 @@ function appendNewSimilar(parent) {
     });
 }
 
-function containsNode(obj, list) {
-    var i;
-    for (i = 0; i < list.length; i++) {
-        if (list[i].id === obj.id) {
-            return i;
-        }
-    }
-    return false;
-}
-function containsEdge(src, trg, list) {
-    var i;
-    for (i = 0; i < list.length; i++) {
-        if ((list[i].source.id === src.id || list[i].source.id === trg.id) && 
-            (list[i].target.id === src.id || list[i].target.id === trg.id)) {
-            return true;
-        }
-    }
-    return false;
-}
+// function appendNewSimilar(parent) {
+//     console.log(parent);
+//     console.log(graph);
+//     console.log(graph.nodes.indexOf(parent));
+
+//     var idx = graph["nodes"].indexOf(parent);
+//     graph["nodes"][idx]["color"] = "orange";
+
+//     /* artist's similar */
+//     lastfm.artist.getSimilar({artist: parent.name},
+//         {success: function(data){
+//             /* Use data. */
+//             // console.log("getSimilar");
+//             console.log(data);
+
+//             // create the graph structure
+//             var i;
+//             for (i = 0; i < N_SIMILAR; i++) {
+//                 var tmp = data["similarartists"]["artist"][i]
+
+//                 // check if valid structure
+//                 if (tmp["mbid"] !== "") {
+//                     var child = {"id":tmp["mbid"], "name":tmp["name"], "color":"gray", "radius":10};
+//                     var existingChildIdx = containsNode(child, graph.nodes);
+
+//                     if (existingChildIdx) {
+//                         graph.nodes[existingChildIdx]["radius"] += 2;
+//                         child = graph.nodes[existingChildIdx];
+//                         var existingEdge = containsEdge(parent, child, graph.links);
+//                         if (existingEdge) {}
+//                         else {
+//                             var link = {"source":parent, "target":child};
+//                             graph["links"].push(link);
+//                         }
+//                     }
+//                     else { // add both node and edge
+//                         graph["nodes"].push(child);
+//                         var link = {"source":parent, "target":child};
+//                         graph["links"].push(link);
+//                     }
+//                 }
+//             }
+
+//             console.log(graph);
+//             // print the graph of similar
+//             drawTree();
+//         },
+//         error: function(code, message){
+//             /* Show error message. */
+//             console.log("5");
+//         }
+//     });
+// }
+
+// function containsNode(obj, list) {
+//     var i;
+//     for (i = 0; i < list.length; i++) {
+//         if (list[i].id === obj.id) {
+//             return i;
+//         }
+//     }
+//     return false;
+// }
+// function containsEdge(src, trg, list) {
+//     var i;
+//     for (i = 0; i < list.length; i++) {
+//         if ((list[i].source.id === src.id || list[i].source.id === trg.id) &&
+//             (list[i].target.id === src.id || list[i].target.id === trg.id)) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
 
