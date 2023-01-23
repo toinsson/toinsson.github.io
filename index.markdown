@@ -4,5 +4,5 @@
 
 layout: home
 ---
-This is short professional website providing below an interactive version of my CV,\
+This is a short professional website providing below an interactive version of my CV,\
 as well as a pdf file for [download](/assets/cv.pdf).
