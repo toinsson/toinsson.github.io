@@ -10,7 +10,7 @@ title:  "Curriculum Vitae"
 
 *1. IRCAM/CNRS/INRIA - Post Doctoral Researcher*
 * Studied the perception of motor learning in tasks involving complex and creative movements by implementing a **metric learning** approach on top of Dynamical Time Warping (*Pytorch*).\
-Published in [PLOS One](https://hal.archives-ouvertes.fr/hal-03790829/).
+Published in [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0272509).
 * Improved upon and released an **open‑source project** on Github and Pypi providing the soft‑DTW algorithm for CUDA devices (*Pytorch, CUDA*).\
 Available as [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pysdtw).
 * Optimised a training schedule for a motor task using **reinforcement learning** and MABs based on a framework specialised in interactive machine learning (Marcelle, Javascript, Python).\
