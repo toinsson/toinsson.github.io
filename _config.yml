@@ -36,7 +36,7 @@ linkedin_username: antoineloriette
 google_analytics: G-D813HW3N0F
 
 # Build settings
-remote_theme: jekyll/minima
+remote_theme: https://github.com/jekyll/minima@v2.5.1
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
