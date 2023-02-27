@@ -36,9 +36,10 @@ linkedin_username: antoineloriette
 google_analytics: G-D813HW3N0F
 
 # Build settings
-theme: minima
+remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
