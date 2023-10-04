@@ -6,7 +6,30 @@ title:  "Curriculum Vitae"
 ---
 
 
-## Research (7 years)
+<h3 style="text-align:left;">
+  Industry
+  <span style="float:right;" class="h3">
+    Apr. - Sept. 2023 (6 months)
+  </span>
+</h3>
+
+*[Lili.ai](https://lili.ai/) - Full-stack Data Scientist*
+1. **Designed, developed and deployed a machine learning framework in Kubernetes**, including:
+  - experiment tracking (Polyaxon),
+  - data quality monitoring with human labelling (Label Studio),
+  - dataset bookeeping (S3 and DVC),
+  - model serving (BentoML).
+2. Supervised and mentored a Big Data Master student working with vector databases (Milvus) and LLMs (BERT-based).
+3. Advised and reviewed the overall data processing pipeline (Prefect).
+4. Contributed end-user features impacting both frontend and backend (Vue.js, Django).
+5. Acted as a Scrum master for a team of 8 people, organising stand-up, planning and restrospective meetings.
+
+<h3 style="text-align:left;">
+  Research
+  <span style="float:right;">
+    2008 - 2013 (6 years)
+  </span>
+</h3>
 
 *1. IRCAM/CNRS/INRIA - Post Doctoral Researcher*
 * Studied the perception of motor learning in tasks involving complex and creative movements by implementing a **metric learning** approach on top of Dynamical Time Warping (*Pytorch*).\
@@ -14,7 +37,7 @@ Published in [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/jou
 * Improved upon and released an **open‑source project** on Github and Pypi providing the soft‑DTW algorithm for CUDA devices (*Pytorch, CUDA*).\
 Available as [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pysdtw).
 * Optimised a training schedule for a motor task using **reinforcement learning** and MABs based on a framework specialised in interactive machine learning (Marcelle, Javascript, Python).\
-Submitted to IHM’22.
+Published at IHM’22.
 * Developed a prototype for movement exploration and modelling based on an algorithm performing live incremental clustering of time series (Javascript, MaxMSP, Python, C++).\
 Demoed at [NIME’22](https://nime.pubpub.org/pub/8zdsd4ar/).
 
@@ -36,7 +59,12 @@ Demoed at [NIME’22](https://nime.pubpub.org/pub/8zdsd4ar/).
 * Developed and released open source software for Intel Realsense camera. This package was recommended by Intel as a primary choice for community maintained Python bindings (until librealsense 2.0 was released) and has accrued over one hundred stars on github.\
 Available as [pyrealsense](https://github.com/toinsson/pyrealsense), [![Downloads](https://static.pepy.tech/personalized-badge/pyrealsense?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pyrealsense).
 
-## Industry (7 years)
+<h3 style="text-align:left;">
+  Industry
+  <span style="float:right;">
+    2014 - 2022 (8 years)
+  </span>
+</h3>
 
 *1. Now&Net*
 * Co-founded a startup providing a collective musical experience organised around DJ-ing.
@@ -49,7 +77,7 @@ Available as [pyrealsense](https://github.com/toinsson/pyrealsense), [![Download
 * **Research engineer** at Ericsson Research [2012]: Prepared the 4G+ prototype for the Mobile World Congress.
 * **Software Developer** 4G/LTE [2008/2014]: Developped algorithms (embedded C) from standard 3GPP specifications. Extended and supported an Erlang test framework used by 50 engineers. Provided training sessions in Stockholm and Beijing.
 
-## Education
+### Education
 
 *1. PhD in Computing Science*
 - University of Glasgow - 2015/2019

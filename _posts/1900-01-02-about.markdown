@@ -1,7 +1,8 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: post
+title:  "About"
+# date:   2023-01-18 18:36:34 +0100
+# categories: jekyll update
 ---
 
 I earned a PhD in Human and Computer Interaction (HCI), with a user experience and machine learning emphasis. My research has involved developing creative solutions to unresolved issues in the context of novel gestural interactions. Typically, this implied collecting data from real users in order to build solid datasets before modeling their interactions with deep or probabilistic models. This work has been consistently published in peer-reviewed journals and conferences.
