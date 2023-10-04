@@ -4,4 +4,4 @@
 
 layout: home
 ---
-This is a small professional website providing a short description of my [profile](/about.html), an interactive version of my [CV](/cv.html), as well as a pdf file for [download](/assets/cv.pdf).
+This is a small professional website providing a short description of my [profile](/about.html), an up-to-date version of my CV ([html](/cv.html) and [pdf](/assets/cv.pdf)) and some [contact](/contact) information.

@@ -19,7 +19,7 @@ title:  "Curriculum Vitae"
   - data quality monitoring with human labelling (Label Studio),
   - dataset bookeeping (S3 and DVC),
   - model serving (BentoML).
-2. Supervised and mentored a Big Data Master student working with vector databases (Milvus) and LLMs (BERT-based).
+2. Supervised and mentored a Big Data Master student working with vector databases (Milvus) and LLMs (BERT-based) for **similarity search** and **document classification**.
 3. Advised and reviewed the overall data processing pipeline (Prefect).
 4. Contributed end-user features impacting both frontend and backend (Vue.js, Django).
 5. Acted as a Scrum master for a team of 8 people, organising stand-up, planning and restrospective meetings.
