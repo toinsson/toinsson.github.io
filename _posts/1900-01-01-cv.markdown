@@ -27,7 +27,7 @@ title:  "Curriculum Vitae"
 <h3 style="text-align:left;">
   Research
   <span style="float:right;">
-    2008 - 2013 (6 years)
+    2014 - 2022 (8 years)
   </span>
 </h3>
 
@@ -62,7 +62,7 @@ Available as [pyrealsense](https://github.com/toinsson/pyrealsense), [![Download
 <h3 style="text-align:left;">
   Industry
   <span style="float:right;">
-    2014 - 2022 (8 years)
+    2008 - 2013 (6 years)
   </span>
 </h3>
 
