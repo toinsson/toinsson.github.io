@@ -75,7 +75,7 @@ Available as [pyrealsense](https://github.com/toinsson/pyrealsense), [![Download
 * **SCRUM master** [2013/2014]: Acted as the ''guardian of the process'' to facilitate daily operations of a cross functional team (8 people). Animated planning meetings, daily follow-up meetings and retrospective meetings.
 * **System engineer** AT&T laboratory [summer 2012]: Integrated features into the customer network with laboratory and in-the-field experiments.
 * **Research engineer** at Ericsson Research [2012]: Prepared the 4G+ prototype for the Mobile World Congress.
-* **Software Developer** 4G/LTE [2008/2014]: Developped algorithms (embedded C) from standard 3GPP specifications. Extended and supported an Erlang test framework used by 50 engineers. Provided training sessions in Stockholm and Beijing.
+* **Software Developer** 4G/LTE [2008/2014]: Developed algorithms (embedded C) from standard 3GPP specifications. Extended and supported an Erlang test framework used by 50 engineers. Provided training sessions in Stockholm and Beijing.
 
 ### Education
 
