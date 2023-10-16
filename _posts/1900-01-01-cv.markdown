@@ -13,7 +13,7 @@ title:  "Curriculum Vitae"
   </span>
 </h3>
 
-*[Lili.ai](https://lili.ai/) - Full-stack Data Scientist*
+*[Lili.ai](https://lili.ai/) - Lead Data Scientist*
 1. **Designed, developed and deployed a machine learning framework in Kubernetes**, including:
   - experiment tracking (Polyaxon),
   - data quality monitoring with human labelling (Label Studio),
