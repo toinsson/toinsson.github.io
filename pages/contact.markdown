@@ -14,7 +14,8 @@ permalink: /contact/
 
 <p>
   Socials:
-  <a rel="me" href="https://github.com/toinsson" target="_blank" title="github">
+  {%- include social.html -%}
+  <!--   <a rel="me" href="https://github.com/toinsson" target="_blank" title="github">
       <svg class="svg-icon grey">
         <use xlink:href="/assets/minima-social-icons.svg#github"></use>
       </svg>
@@ -23,5 +24,5 @@ permalink: /contact/
       <svg class="svg-icon grey">
         <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
       </svg>
-  </a>
+  </a> -->
 </p>
