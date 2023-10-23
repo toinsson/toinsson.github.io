@@ -34,7 +34,8 @@ github_username:  toinsson
 linkedin_username: antoineloriette
 
 # Build settings
-remote_theme: https://github.com/jekyll/minima@v2.5.1
+# remote_theme: https://github.com/jekyll/minima@v2.5.1
+remote_theme: https://github.com/toinsson/minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
