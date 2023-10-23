@@ -30,8 +30,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://toinsson.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:title.html
 
-github_username:  toinsson
-linkedin_username: antoineloriette
+# github_username:  toinsson
+# linkedin_username: antoineloriette
 
 # Build settings
 # remote_theme: https://github.com/jekyll/minima@v2.5.1
@@ -39,6 +39,17 @@ remote_theme: https://github.com/toinsson/minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+
+minima:
+  # Minima date format.
+  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+  #
+  # date_format: "%b %-d, %Y"
+
+  # Generate social links in footer.
+  #
+  skin: 
+    solarized
 
 # Exclude from processing.
 # The following items will not be processed, by default.

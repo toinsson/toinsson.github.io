@@ -5,18 +5,23 @@ permalink: /contact/
 ---
 
 <p>
-Phone:
-</p>
-<p>
-+33 7 66 73 95 93
+  Phone: +33 7 66 73 95 93
 </p>
 
 <p>
-Email:
+  Email: <a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
 </p>
-<a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
 
-<div class="social-links">
-Socials:
-  {%- include social.html -%}
-</div>
+<p>
+  Socials:
+  <a rel="me" href="https://github.com/toinsson" target="_blank" title="github">
+      <svg class="svg-icon grey">
+        <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+      </svg>
+  </a>
+  <a rel="me" href="https://www.linkedin.com/in/antoineloriette" target="_blank" title="linkedin">
+      <svg class="svg-icon grey">
+        <use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+      </svg>
+  </a>
+</p>
