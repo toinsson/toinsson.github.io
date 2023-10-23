@@ -9,7 +9,7 @@ title:  "Curriculum Vitae"
 <h3 style="text-align:left;">
   Industry
   <span style="float:right;" class="h3">
-    Apr. - Sept. 2023 (6 months)
+    2023
   </span>
 </h3>
 
@@ -31,17 +31,17 @@ title:  "Curriculum Vitae"
   </span>
 </h3>
 
-*1. IRCAM/CNRS/INRIA - Post Doctoral Researcher*
+*1. [IRCAM](https://ismm.ircam.fr/)/[CNRS](https://hci.isir.upmc.fr/)/[INRIA](https://ex-situ.lri.fr/) - Post Doctoral Researcher*
 * Studied the perception of motor learning in tasks involving complex and creative movements by implementing a **metric learning** approach on top of Dynamical Time Warping (*Pytorch*).\
 Published in [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0272509).
 * Improved upon and released an **open‑source project** on Github and Pypi providing the soft‑DTW algorithm for CUDA devices (*Pytorch, CUDA*).\
 Available as [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pysdtw).
 * Optimised a training schedule for a motor task using **reinforcement learning** and MABs based on a framework specialised in interactive machine learning (Marcelle, Javascript, Python).\
-Published at IHM’22.
+Published at [IHM’23](https://dl.acm.org/doi/abs/10.1145/3583961.3583977).
 * Developed a prototype for movement exploration and modelling based on an algorithm performing live incremental clustering of time series (Javascript, MaxMSP, Python, C++).\
 Demoed at [NIME’22](https://nime.pubpub.org/pub/8zdsd4ar/).
 
-*2. University of Glasgow - PhD Candidate*
+*2. [University of Glasgow](https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/inferencedynamicsandinteraction/) - PhD Candidate*
 * Researched [computational methods for the study of novel gestural interactions](https://theses.gla.ac.uk/78981/):
   - **Deployed discriminative models** (Keras) to create virtual surfaces from RGB‑D sensors.\
         Published at [ISS’17](https://dl.acm.org/doi/abs/10.1145/3132272.3135074).
