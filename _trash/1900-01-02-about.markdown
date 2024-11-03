@@ -7,7 +7,7 @@ title:  "About"
 
 I am trained as a researcher, specialised in user experience (UX) and machine learning (ML, AI), equipped with advanced coding skills and strong team management capabilities.
 
-I earned a PhD in Human and Computer Interaction (HCI). My research involved crafting inventive solutions to unresolved challenges in the context of novel gestural interactions. This implied co-designing prototypes from user requirements, capturing salient interaction data, building datasets for deep or probabilistic modelling, running UX experiments and analysing results. This work has been consistently published in peer-reviewed journals and conferences.
+I earned a [PhD](https://theses.gla.ac.uk/78981/) in Human and Computer Interaction (HCI). My research involved crafting inventive solutions to unresolved challenges in the context of novel gestural interactions. This implied co-designing prototypes from user requirements, capturing salient interaction data, building datasets for deep or probabilistic modelling, running UX experiments and analysing results. This work has been consistently published in peer-reviewed journals and conferences.
 
 I also spent several years in software development within various company structures (R&D, big groups and startups). I have delivered production-ready software written in C on massively parallel embedded devices as well as designed, developed and deployed machine learning framework for document classification based on LLMs. I keep performance in mind, rely on modern technologies and focus on minimising technical debt. Some of my work has been, when possible, open sourced.
 

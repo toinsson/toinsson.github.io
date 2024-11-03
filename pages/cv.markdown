@@ -1,28 +1,34 @@
 ---
 layout: post
 title:  "Curriculum Vitae"
-# date:   2023-01-18 18:36:34 +0100
-# categories: jekyll update
+permalink: /cv/
 ---
 
 
 <h3 style="text-align:left;">
   Industry
   <span style="float:right;" class="h3">
-    2023
+    2023 - present
   </span>
 </h3>
 
-*[Lili.ai](https://lili.ai/) - Lead Data Scientist*
-1. **Designed, developed and deployed a machine learning framework in Kubernetes**, including:
+
+*1. [Wolters Kluwer Legal Software](https://www.linkedin.com/company/wolters-kluwer-legal-software) - Machine Learning Engineer*
+* Reviewed and contributed to the architecture of an asynchronous RAG application.
+* Conducted product presentations and demos from an AI perspective to several clients.
+* Refactored the training and inference pipeline of our production system to facilitate onboarding.
+* Defined Epic and user stories for the AI team, participated in prioritisation meetings.
+
+*2. [Lili.ai](https://lili.ai/) - Lead Data Scientist*
+* **Designed, developed and deployed a machine learning framework in Kubernetes**, including:
   - experiment tracking (Polyaxon),
   - data quality monitoring with human labelling (Label Studio),
   - dataset bookeeping (S3 and DVC),
   - model serving (BentoML).
-2. Supervised and mentored a Big Data Master student working with vector databases (Milvus) and LLMs (BERT-based) for **similarity search** and **document classification**.
-3. Advised and reviewed the overall data processing pipeline (Prefect).
-4. Contributed end-user features impacting both frontend and backend (Vue.js, Django).
-5. Acted as a Scrum master for a team of 8 people, organising stand-up, planning and restrospective meetings.
+* Supervised and mentored a Big Data Master student working with vector databases (Milvus) and LLMs (BERT-based) for **similarity search** and **document classification**.
+* Advised and reviewed the overall data processing pipeline (Prefect).
+* Contributed end-user features impacting both frontend and backend (Vue.js, Django).
+* Acted as a Scrum master for a team of 8 people, organising stand-up, planning and restrospective meetings.
 
 <h3 style="text-align:left;">
   Research
@@ -35,7 +41,7 @@ title:  "Curriculum Vitae"
 * Studied the perception of motor learning in tasks involving complex and creative movements by implementing a **metric learning** approach on top of Dynamical Time Warping (*Pytorch*).\
 Published in [PLOS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0272509).
 * Improved upon and released an **open‑source project** on Github and Pypi providing the soft‑DTW algorithm for CUDA devices (*Pytorch, CUDA*).\
-Available as [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pysdtw).
+Available as [pysdtw](https://github.com/toinsson/pysdtw), [![Downloads](https://static.pepy.tech/personalized-badge/pysdtw?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/pysdtw).
 * Optimised a training schedule for a motor task using **reinforcement learning** and MABs based on a framework specialised in interactive machine learning (Marcelle, Javascript, Python).\
 Published at [IHM’23](https://dl.acm.org/doi/abs/10.1145/3583961.3583977).
 * Developed a prototype for movement exploration and modelling based on an algorithm performing live incremental clustering of time series (Javascript, MaxMSP, Python, C++).\
@@ -57,7 +63,7 @@ Demoed at [NIME’22](https://nime.pubpub.org/pub/8zdsd4ar/).
 * Analysed visualisation techniques ([Jupyter notebooks](https://github.com/toinsson/raviz)) for low‑dimensional embeddings, i.e. t‑SNE.
 * **Tutored the courses Artificial Intelligence and Data Fundamentals** for Undergraduate and Master students.
 * Developed and released open source software for Intel Realsense camera. This package was recommended by Intel as a primary choice for community maintained Python bindings (until librealsense 2.0 was released) and has accrued over one hundred stars on github.\
-Available as [pyrealsense](https://github.com/toinsson/pyrealsense), [![Downloads](https://static.pepy.tech/personalized-badge/pyrealsense?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/pyrealsense).
+Available as [pyrealsense](https://github.com/toinsson/pyrealsense), [![Downloads](https://static.pepy.tech/personalized-badge/pyrealsense?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/pyrealsense).
 
 <h3 style="text-align:left;">
   Industry

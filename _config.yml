@@ -48,8 +48,8 @@ minima:
 
   # Generate social links in footer.
   #
-  skin: 
-    solarized
+  # skin: 
+  #   solarized-light
   social_links:
     - { platform: github,         user_url: "https://github.com/toinsson" }
     - { platform: linkedin,       user_url: "https://www.linkedin.com/in/antoineloriette/" }

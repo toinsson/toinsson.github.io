@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "About"
+# date:   2023-01-18 18:36:34 +0100
+# categories: jekyll update
+---
+
+I trained as both a researcher and a software engineer, specialised in user experience (UX) and machine learning (ML, AI), equipped with advanced coding skills and strong team management capabilities.
+
+I earned a PhD [[1](https://theses.gla.ac.uk/78981/)] in Human and Computer Interaction (HCI). My research involved crafting inventive solutions for unresolved challenges in the context of novel gestural interactions. This implied co-designing prototypes from user requirements, capturing salient interaction data, building datasets for deep probabilistic modelling, running UX experiments and analysing results. This work has been consistently published in peer-reviewed journals and conferences [[2](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0272509), [3](https://arxiv.org/abs/2209.14788)].
+
+I also spent several years in software development within various company structures (R&D, big groups and startups). I have delivered production-ready software written in C on massively parallel embedded devices as well as designed, developed and deployed machine learning framework for document classification based on LLMs. I keep performance in mind, rely on modern technologies and focus on minimising technical debt. Some of my work has been, when possible, open sourced [[4](https://github.com/pyrealsense), [5](https://github.com/pysdtw)].
+
+Finally, I have experience in team management and tutoring. I regularly took on the role of SCRUM master with the organisation of the daily meeting, planning meeting and retrospective meeting. In addition, I served as a subject-matter expert by reviewing for conference proceedings or tutoring university courses for AI and ML students. I am passionate about performance within the team with meticulous attention to each team member's growth and contribution.
