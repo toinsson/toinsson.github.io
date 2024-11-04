@@ -18,6 +18,7 @@ permalink: /cv/
 * Conducted product presentations and demos from an AI perspective to several clients.
 * Refactored the training and inference pipeline of our production system to facilitate onboarding.
 * Defined Epic and user stories for the AI team, participated in prioritisation meetings.
+* Kept the global organisation updated to latest HCI, ML/IA research via a journal club.
 
 *2. [Lili.ai](https://lili.ai/) - Lead Data Scientist*
 * **Designed, developed and deployed a machine learning framework in Kubernetes**, including:
